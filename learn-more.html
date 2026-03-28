@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initialize Project | Dianoia Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007bff;
+            --navy: #102a43;
+            --bg-soft: #f4f7fa;
+            --text-main: #334e68;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            padding: 1.5rem 8%;
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+        .logo span { color: var(--primary); }
+
+        /* --- Header --- */
+        .page-header {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+        .page-header h1 { font-size: 2.8rem; color: var(--navy); margin-bottom: 10px; letter-spacing: -1.5px; }
+        .page-header p { color: #627d98; font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+
+        /* --- Form Wrapper --- */
+        .form-wrapper {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-section { margin-bottom: 50px; }
+        .section-tag {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            padding: 4px 12px;
+            background: rgba(0, 123, 255, 0.08);
+            border-radius: 4px;
+        }
+
+        .grid-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        label { display: block; font-weight: 700; font-size: 0.95rem; margin-bottom: 10px; color: var(--navy); }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: #fcfdfe;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+        }
+
+        /* --- Interactive Chips --- */
+        .chip-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .chip {
+            padding: 12px 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            background: white;
+        }
+        .chip:hover { border-color: var(--primary); color: var(--primary); }
+        .chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+
+        /* --- Collaborative Section --- */
+        .collab-info {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .collab-text h4 { color: var(--navy); margin-bottom: 5px; }
+        .collab-text p { font-size: 0.9rem; color: #627d98; }
+
+        /* --- Submit Button --- */
+        .submit-area {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .main-btn {
+            background: var(--primary);
+            color: white;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .main-btn:hover { background: var(--navy); transform: translateY(-2px); }
+       
+       /* --- Footer --- */
+footer {
+    background:  #0056b3;
+    color: white;
+    padding: 4rem 0;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo { font-size: 1.5rem; font-weight: 700; }
+.footer-logo span { color: var(--primary-color); }
+
+.social-links a {
+    color: #bcccdc;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover { color: var(--primary-color); 
+}
+        @media (max-width: 768px) {
+            .grid-inputs { grid-template-columns: 1fr; }
+            .form-wrapper { padding: 40px 25px; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo"> DECIPHER &<span>Dazzle</span></a>
+        <div style="font-size: 0.85rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Direct Inquiry Portal</div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Start Your Project Today</h1>
+            <p>Skip the small talk. Let's dive into the technical requirements and build your competitive advantage.</p>
+        </div>
+    </header>
+
+    <div class="form-wrapper">
+        <form id="onboardingForm">
+            
+            <div class="form-section">
+                <span class="section-tag">Phase 01: Identification</span>
+                <div class="grid-inputs">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Lead Architect / Founder" required>
+                    </div>
+                    <div>
+                        <label for="org">Organization</label>
+                        <input type="text" id="org" placeholder="Company Name" required>
+                    </div>
+                    <div style="grid-column: span 2;">
+                        <label for="email">Primary Work Email</label>
+                        <input type="email" id="email" placeholder="you@organization.com" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <span class="section-tag">Phase 02: Core Competencies Needed</span>
+                <label>Which domain requires our expertise?</label>
+                <div class="chip-group" id="domainGroup">
+                    <div class="chip active">Cloud Infrastructure</div>
+                    <div class="chip">Full-Stack React (Next.js)</div>
+                    <div class="chip">Python Automation / AI</div>
+                    <div class="chip">Security & ISO Compliance</div>
+                    <div class="chip">API Development</div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <span class="section-tag">Phase 03: Project Intel</span>
+                <div style="margin-bottom: 25px;">
+                    <label for="stage">Current Project Stage</label>
+                    <select id="stage">
+                        <option>Conceptual / Ideation</option>
+                        <option>Prototype / MVP in Progress</option>
+                        <option>Scaling Existing Infrastructure</option>
+                        <option>Security Audit / Optimization</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="vision">The Technical Vision</label>
+                    <textarea id="vision" rows="6" placeholder="What are the specific technical challenges you're facing? Tell us about your stack, your deadlines, and your long-term goals."></textarea>
+                </div>
+
+                <div class="collab-info">
+                    <div style="font-size: 2rem;">🤝</div>
+                    <div class="collab-text">
+                        <h4>Collaborative Methodology</h4>
+                        <p>At <strong> DECIPHER & Dazzle</strong>, we don't just deliver code. We integrate with your team to provide knowledge transfer and architectural oversight throughout the engagement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-area">
+                <button type="submit" class="main-btn">Initialize Consultation</button>
+                <p style="margin-top: 20px; font-size: 0.85rem; color: #94a3b8; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    Upon submission, your brief will be reviewed by a senior engineer. Expect a detailed technical response within 24 business hours.
+                </p>
+            </div>
+
+        </form>
+    </div>
+
+     <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">DECIPHER &<span style="text-transform: uppercase;">Dazzle</span></div>
+        <p><strong>&copy; 2026  DECIPHER &<span>Dazzle</span>. All Rights Reserved.</strong></p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://x.com/" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Chips Logic
+        const domainGroup = document.getElementById('domainGroup');
+        domainGroup.addEventListener('click', (e) => {
+            if (e.target.classList.contains('chip')) {
+                domainGroup.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        });
+
+        // Form Submission Simulation
+        document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.main-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = 'Analyzing Requirements...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert('Analysis Complete. Your project brief has been successfully transmitted to the  DECIPHER & DAZZLE team for review.');
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+                btn.disabled = false;
+                this.reset();
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>

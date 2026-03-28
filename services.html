@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | CompanyName</title>
+    <style>
+
+   /* --- Professional Variables --- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --navy: #102a43;
+    --text-main: #334e68;
+    --text-muted: #627d98;
+    --bg-light: #f0f4f8;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- Base Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.logo {
+    font-size:2rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -1px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.logo span { color: #007bff; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color:  #007bff;
+}
+
+.nav-cta {
+    background:#007bff;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-cta:hover { background:#007bff; }
+
+        /* Services Layout */
+.services-intro {
+    padding: 80px 20px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1a2a6c;
+    margin-bottom: 15px;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #b21f1f;
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-list {
+    list-style: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.service-list li {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #b21f1f;
+    font-weight: bold;
+}
+
+/* CTA Section */
+.cta-section {
+    background: #1a2a6c;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #fdbb2d;
+    color: #1a2a6c;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 25px;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: #fff;
+}
+/* --- Trust Bar Styling --- */
+.trust-bar {
+    background: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.trust-bar p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    flex-wrap: wrap;
+}
+
+.company-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- Process Section Styling --- */
+.process-section {
+    padding: 100px 20px;
+    background-color: #fff;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.process-step {
+    position: relative;
+    padding-top: 30px;
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(26, 42, 108, 0.05); /* Very light navy */
+    position: absolute;
+    top: -10px;
+    left: 0;
+    z-index: 1;
+}
+
+.process-step h4 {
+    position: relative;
+    z-index: 2;
+    font-size: 1.25rem;
+    color: #1a2a6c;
+    margin-bottom: 10px;
+}
+
+.process-step p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Refinement of existing Hero --- */
+.hero-section {
+   background-image: radial-gradient( circle 476px at 54.8% 51.5%,  rgba(168,229,253,1) 0%, rgba(244,244,254,1) 42.3%, rgba(244,244,254,1) 100.2% );
+    padding: 100px 0;
+    color: #457fca;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* --- General Responsiveness --- */
+@media (max-width: 768px) {
+    .logo-grid { gap: 20px; }
+    .section-header h2 { font-size: 2rem; }
+}
+
+/* --- Comparison Table --- */
+.comparison-section { padding: 80px 0; }
+.table-wrapper { overflow-x: auto; margin-top: 40px; }
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.comparison-table th {
+    background: var(--navy);
+    color: white;
+    font-weight: 600;
+}
+
+.comparison-table tr:hover { background: var(--bg-light); }
+
+/* --- Tech Stack Section --- */
+.tech-stack {
+    background: #0f172a; /* Deep dark blue */
+    color: white;
+    padding: 100px 0;
+}
+
+.tech-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tech-text h2 { font-size: 2.5rem; margin: 20px 0; }
+
+.tech-icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.tech-tag {
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.tech-tag a{
+    color: white;
+    text-decoration: none;
+}
+
+.tech-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* --- FAQ Card Styling --- */
+.service-faq { padding: 80px 0; }
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.faq-card {
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: var(--bg-light);
+}
+
+.faq-card h4 { color: var(--navy); margin-bottom: 15px; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .tech-content { grid-template-columns: 1fr; text-align: center; }
+    .tech-icons-grid { justify-content: center; }
+    .faq-grid { grid-template-columns: 1fr; }
+}
+/* --- Footer --- */
+footer {
+    background:  #0056b3;
+    color: white;
+    padding: 4rem 0;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo { font-size: 1.5rem; font-weight: 700; }
+.footer-logo span { color: var(--primary-color); }
+
+.social-links a {
+    color: #bcccdc;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover { color: var(--primary-color); }
+
+    </style>
+</head>
+<body>
+ <nav class="navbar">
+        <div class="logo">DECIPHER &<span style="text-transform: uppercase;">Dazzle</span></div>
+        <ul class="nav-links">
+            <li><a href="page.html" >Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html"class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Get Started</a>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 style="text-transform: uppercase;">Our Expertise</h1>
+            <p class="subtitle">Custom solutions tailored to help your business thrive in the digital age.</p>
+        </div>
+    </header>
+
+    <section class="services-intro container">
+        <div class="section-header">
+            <h2>What We Do</h2>
+            <p>From initial concept to final deployment, we provide end-to-end services that ensure your brand stands out and performs at its peak.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🎨</div>
+                <h3>Web Design</h3>
+                <p>We create beautiful, responsive, and user-centric websites that reflect your brand identity and engage your target audience.</p>
+                <ul class="service-list">
+                    <li>UI/UX Design</li>
+                    <li>Responsive Layouts</li>
+                    <li>E-commerce Solutions</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🚀</div>
+                <h3>SEO & Marketing</h3>
+                <p>Increase your visibility and drive organic traffic with our data-driven SEO strategies and content optimization techniques.</p>
+                <ul class="service-list">
+                    <li>Keyword Research</li>
+                    <li>On-Page SEO</li>
+                    <li>Analytics Reporting</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">💡</div>
+                <h3>Consulting</h3>
+                <p>Get expert advice on digital transformation, business strategy, and how to leverage technology for sustainable growth.</p>
+                <ul class="service-list">
+                    <li>Market Analysis</li>
+                    <li>Tech Stack Audits</li>
+                    <li>Strategy Workshops</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to start your next project?</h2>
+            <p>Let's collaborate to bring your vision to life.</p>
+            <a href="contact.html" class="cta-button">Get a Free Quote</a>
+        </div>
+    </section>
+<section class="trust-bar">
+    <div class="container">
+        <p>Trusted by industry leaders worldwide</p>
+        <div class="logo-grid">
+            <span class="company-logo">TECHFLOW</span>
+            <span class="company-logo">NEXUS</span>
+            <span class="company-logo">VITALITY</span>
+            <span class="company-logo">GLOBEX</span>
+        </div>
+    </div>
+</section>
+
+<section class="process-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Strategic Process</h2>
+            <p>We follow a disciplined methodology to ensure every project is delivered on time, within budget, and above expectations.</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h4>Discovery</h4>
+                <p>We dive deep into your business goals and user needs to create a roadmap for success.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h4>Strategy</h4>
+                <p>Our experts design a custom solution architecture tailored to your specific market.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h4>Execution</h4>
+                <p>Agile development and precise design bring your vision to life with weekly updates.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <h4>Optimization</h4>
+                <p>Post-launch, we monitor and refine your system to ensure peak performance.</p>
+            </div>
+        </div>
+    </div>
+   
+</section>
+<section class="comparison-section container">
+    <div class="section-header">
+        <h2>Find the Right Fit</h2>
+        <p>Whether you're a startup or an established enterprise, we have a service model designed for your scale.</p>
+    </div>
+    <div class="table-wrapper">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Launchpad</th>
+                    <th>Accelerate</th>
+                    <th>Enterprise</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Strategy Consulting</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Custom Development</td>
+                    <td>Basic</td>
+                    <td>Advanced</td>
+                    <td>Full-Scale</td>
+                </tr>
+                <tr>
+                    <td>Support Response</td>
+                    <td>24 Hours</td>
+                    <td>4 Hours</td>
+                    <td>Priority Instant</td>
+                </tr>
+                <tr>
+                    <td>Security Audits</td>
+                    <td>Quarterly</td>
+                    <td>Monthly</td>
+                    <td>Real-time</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="tech-stack">
+    <div class="container">
+        <div class="tech-content">
+            <div class="tech-text">
+                <span class="badge" style="color: var(--white); border-color: var(--primary-color); background: var(--primary-color);">Security First</span>
+                <h2>Built on Industrial-Grade Infrastructure</h2>
+                <p>We don't just build for today; we build for the future. Our services utilize the most secure and scalable technologies available in the digital ecosystem.</p>
+                <div class="tech-icons-grid">
+                    <div class="tech-tag"><a href="azure.html">AWS / Azure</a></div>
+                    <div class="tech-tag"><a href="react.html">React/ Next.js</a></div>
+                    <div class="tech-tag"><a href=python.html>Python / Node.js</div>
+                    <div class="tech-tag"><a href="iso.html">ISO 27001 Ready</a></div>
+                </div>
+            </div>
+            <div class="tech-image">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600" alt="Cybersecurity and technology">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-faq container">
+    <div class="section-header">
+        <h2>Service FAQs</h2>
+    </div>
+    <div class="faq-grid">
+        <div class="faq-card">
+            <h4>Do you work with international clients?</h4>
+            <p>Yes, we currently support partners across 12 countries with seamless remote collaboration tools.</p>
+        </div>
+        <div class="faq-card">
+            <h4>Can we upgrade our service tier later?</h4>
+            <p>Absolutely. Our solutions are designed to be modular, allowing you to scale up as your user base grows.</p>
+        </div>
+    </div>
+</section>
+ <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">DECIPHER & <span style="text-transform: uppercase; color: #007bff;">Dazzle</span></div>
+            <p><strong>&copy; 2026 DECIPHER & <span style="text-transform: uppercase;">Dazzle</span>. All Rights Reserved.</strong></p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://x.com/" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

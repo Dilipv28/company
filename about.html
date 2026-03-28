@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CompanyName</title>
+    <style>
+        /* Modern Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+   /* --- Professional Variables --- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --navy: #102a43;
+    --text-main: #334e68;
+    --text-muted: #627d98;
+    --bg-light: #f0f4f8;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- Base Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.logo {
+    font-size:2rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -1px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.logo span { color: #007bff; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color:  #007bff;
+}
+
+.nav-cta {
+    background:#007bff;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-cta:hover { background:#007bff; }
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient( 90.6deg,  rgba(251,229,210,1) 18.9%, rgba(217,240,235,1) 39.5%, rgba(208,239,238,1) 51.1%, rgba(219,242,240,1) 62.1%, rgba(233,240,217,1) 84.1% );
+    color: rgb(22, 1, 1);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* About Grid */
+.content-section {
+    padding: 60px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.stats-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat-item {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 2rem;
+    color: #b21f1f;
+}
+
+/* Values Section */
+.values-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.text-center { text-align: center; margin-bottom: 40px; }
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.value-card {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.value-card h3 {
+    margin-bottom: 15px;
+    color: #1a2a6c;
+}
+/* --- Team Section Styling --- */
+.team-section {
+    padding: 100px 20px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.team-img-placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 0px solid var(--primary-color);
+}
+
+
+.team-card h4 {
+    color: var(--navy);
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+.role {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* --- Testimonial Section --- */
+.testimonial-section {
+    background-color: var(--navy);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-icon {
+    font-size: 6rem;
+    font-family: serif;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonial-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Footer --- */
+footer {
+    background:  #0056b3;
+    color: white;
+    padding: 4rem 0;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo { font-size: 1.5rem; font-weight: 700; }
+.footer-logo span { color: var(--primary-color); }
+
+.social-links a {
+    color: #bcccdc;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover { color: var(--primary-color); }
+
+    </style>
+    
+</head>
+<body>
+<body>
+     <nav class="navbar">
+      <div class="logo">DECIPHER &<span style="text-transform: uppercase;">Dazzle</span></div>
+        <ul class="nav-links">
+            <li><a href="page.html">Home</a></li>
+            <li><a href="about.html"class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Get Started</a>
+    </nav>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p class="subtitle">Making technology accessible for everyone since 2020.</p>
+        </div>
+    </header>
+
+    <section class="content-section container">
+        <div class="about-grid">
+            <div class="text-content">
+                <h2>Who We Are</h2>
+                <p>Founded in 2020, we started with a simple goal: to bridge the gap between complex tech and everyday users. Our journey began in a small home office, fueled by the belief that high-quality digital solutions shouldn't be a luxury.</p>
+                <p>Today, our team of experts works tirelessly to deliver results that drive growth and empower communities across the globe.</p>
+            </div>
+            <div class="stats-box">
+                <div class="stat-item"><strong>150+</strong> <span>Projects Done</span></div>
+                <div class="stat-item"><strong>20+</strong> <span>Expert Members</span></div>
+                <div class="stat-item"><strong>5</strong> <span>Global Offices</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 class="text-center">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We don't just follow trends; we aim to set them by thinking outside the box.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>Transparency and honesty are the foundation of every partnership we build.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Accessibility</h3>
+                    <p>Tech is for everyone. We design with inclusivity as a top priority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="team-section container">
+        <div class="text-center">
+            <h2>Meet Our Leadership</h2>
+            <p>A diverse team of visionaries dedicated to your success.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="122" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+                </div>
+                <h4>Alex Rivera</h4>
+                <p class="role">CEO & Founder</p>
+                <p>15+ years of experience in digital transformation and cloud strategy.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="122" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+                </div>
+                <h4>Sarah Chen</h4>
+                <p class="role">CTO</p>
+                <p>Leading our engineering team to build scalable, secure, and accessible tech.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="122" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+                </div>
+                <h4>Marcus Thorne</h4>
+                <p class="role">Head of Design</p>
+                <p>Ensuring every user interface is intuitive, modern, and high-performing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="container text-center">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">At <strong style="color: #007bff;">Decipher and Dazzle</strong>, we believe that true technical excellence is born at the intersection of rigorous logic and relentless curiosity. We aren’t just developers or architects; we are enthusiasts of the "Aha!" moment. We combine the excitement of cutting-edge exploration with the deep-seated knowledge required to build systems that last.</p>
+            
+        </div>
+    </section>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">DECIPHER & <span style="text-transform: uppercase; color: #007bff;">Dazzle</span></div>
+            <p><strong>&copy; 2026 DECIPHER & <span style="text-transform: uppercase;">Dazzle</span>. All Rights Reserved.</strong></p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://x.com/" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
